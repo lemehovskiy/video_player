@@ -1,0 +1,302 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,600);* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input,
+button {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+input:focus,
+button:focus {
+  outline: none;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.back-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  margin: auto;
+}
+
+section {
+  padding: 0 20px;
+}
+
+.rect-outer {
+  position: relative;
+}
+
+.rect-outer .rect-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.video-player-demo {
+  position: relative;
+}
+
+.controls {
+  z-index: 100;
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.controls .play-pause {
+  margin: 0 10px 0 0;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  text-indent: 30px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 30px;
+  height: 32px;
+}
+
+.controls .play-pause::before,
+.controls .play-pause::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  border: 0 solid transparent;
+  border-width: 8px 0 8px 15px;
+  border-left-color: #eee;
+  width: 0;
+  height: 0;
+  -webkit-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.controls .play-pause::before {
+  height: 16px;
+}
+
+.controls .play-pause::after {
+  left: 15px;
+  top: 8px;
+}
+
+.controls .play-pause.paused::before,
+.controls .play-pause.paused::after {
+  border-width: 0 0 0 12px;
+  height: 32px;
+}
+
+.controls .play-pause.paused::after {
+  left: 18px;
+  top: 0;
+}
+
+.controls .progress {
+  display: block;
+  width: 100%;
+  height: 20px;
+  overflow: hidden;
+}
+
+.controls .progress-bar {
+  width: 0%;
+  height: 100%;
+  display: inline-block;
+  background-color: #2a84cd;
+}
+
+.section-intro {
+  position: relative;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: white;
+}
+
+.section-intro:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.section-intro .title {
+  font-size: 50px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .section-intro .title {
+    font-size: 8.33333vw;
+  }
+}
+
+
+/*# sourceMappingURL=style.css.map*/

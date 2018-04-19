@@ -7,4 +7,6 @@ require('../build/video_player.js');
 
 $(document).ready(function () {
 
+    $('.video-player-demo').videoPlayer();
+
 });

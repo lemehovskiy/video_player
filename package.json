@@ -2,7 +2,7 @@
     "name": "video_player",
     "version": "1.0.0",
     "description": "jQuery plugin",
-    "main": "build\/video_player.js",
+    "main": "build/video_player.js",
     "dependencies": {
         "jquery": "^3.2.1"
     },
@@ -21,7 +21,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https:\/\/github.com\/lemehovskiy\/video_player"
+        "url": "https://github.com/lemehovskiy/video_player"
     },
     "author": "lemehovskiy",
     "license": "ISC"
