@@ -3,7 +3,7 @@ video_player
 
 ### Demo
 
-[https://lemehovskiy.github.io/video_player/demo](https://lemehovskiy.github.io/video_player/demo/)
+[https://lemehovskiy.github.io/video_player/test](https://lemehovskiy.github.io/video_player/test/)
 
 ### Browser support
 
