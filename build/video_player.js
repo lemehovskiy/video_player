@@ -154,6 +154,18 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           self.$video.trigger('ended.vp');
         });
 
+        self.$video[0].addEventListener('play', function (e) {
+          self.$play_pause.addClass('play');
+          self.$play_pause.removeClass('paused');
+          self.$video.trigger('play.vp');
+        });
+
+        self.$video[0].addEventListener('pause', function (e) {
+          self.$play_pause.addClass('paused');
+          self.$play_pause.removeClass('play');
+          self.$video.trigger('pause.vp');
+        });
+
         self.$progress[0].addEventListener('click', function (e) {
           var pos = (e.pageX - this.getBoundingClientRect().x) / this.offsetWidth;
 
@@ -192,20 +204,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       key: 'play',
       value: function play() {
         var self = this;
-
-        self.$play_pause.addClass('play');
-        self.$play_pause.removeClass('paused');
-
         self.$video[0].play();
       }
     }, {
       key: 'pause',
       value: function pause() {
         var self = this;
-
-        self.$play_pause.addClass('paused');
-        self.$play_pause.removeClass('play');
-
         self.$video[0].pause();
       }
     }, {

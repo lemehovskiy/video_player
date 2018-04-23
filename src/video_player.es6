@@ -83,6 +83,19 @@
         self.$video.trigger('ended.vp');
       });
 
+      self.$video[0].addEventListener('play', function (e) {
+        self.$play_pause.addClass('play');
+        self.$play_pause.removeClass('paused');
+        self.$video.trigger('play.vp');
+      });
+
+      self.$video[0].addEventListener('pause', function (e) {
+        self.$play_pause.addClass('paused');
+        self.$play_pause.removeClass('play');
+        self.$video.trigger('pause.vp');
+      });
+
+
       self.$progress[0].addEventListener('click', function (e) {
         let pos = (e.pageX - this.getBoundingClientRect().x) / this.offsetWidth;
 
@@ -124,21 +137,12 @@
 
     play() {
       let self = this;
-
-      self.$play_pause.addClass('play');
-      self.$play_pause.removeClass('paused');
-
       self.$video[0].play();
     }
 
     pause() {
       let self = this;
-
-      self.$play_pause.addClass('paused');
-      self.$play_pause.removeClass('play');
-
       self.$video[0].pause();
-
     }
 
     full_screen() {
