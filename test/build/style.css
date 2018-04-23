@@ -186,6 +186,11 @@ section {
   position: relative;
 }
 
+.video-player-demo[data-is-full-screen=true] video {
+  width: 100%;
+  height: auto;
+}
+
 .controls {
   z-index: 100;
   position: absolute;
@@ -203,48 +208,15 @@ section {
   background: transparent;
   border: 0;
   text-indent: 30px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 30px;
-  height: 32px;
+  font-size: 30px;
 }
 
-.controls .play-pause::before,
-.controls .play-pause::after {
-  content: '';
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  border: 0 solid transparent;
-  border-width: 8px 0 8px 15px;
-  border-left-color: #eee;
-  width: 0;
-  height: 0;
-  -webkit-transition: all 0.2s linear;
-  -o-transition: all 0.2s linear;
-  transition: all 0.2s linear;
+.controls .play-pause.play:before {
+  content: 'Pause';
 }
 
-.controls .play-pause::before {
-  height: 16px;
-}
-
-.controls .play-pause::after {
-  left: 15px;
-  top: 8px;
-}
-
-.controls .play-pause.paused::before,
-.controls .play-pause.paused::after {
-  border-width: 0 0 0 12px;
-  height: 32px;
-}
-
-.controls .play-pause.paused::after {
-  left: 18px;
-  top: 0;
+.controls .play-pause.paused:before {
+  content: 'Play';
 }
 
 .controls .progress {
