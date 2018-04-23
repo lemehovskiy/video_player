@@ -9,4 +9,9 @@ $(document).ready(function () {
 
     $('.video-player-demo').videoPlayer();
 
+
+    $('.video-player-demo').on('ended.vp', function(){
+        alert('ended');
+    });
+
 });

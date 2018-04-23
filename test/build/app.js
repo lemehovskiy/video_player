@@ -7076,6 +7076,10 @@ __webpack_require__(108);
 $(document).ready(function () {
 
     $('.video-player-demo').videoPlayer();
+
+    $('.video-player-demo').on('ended.vp', function () {
+        alert('ended');
+    });
 });
 
 /***/ }),
@@ -12179,8 +12183,12 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
                     self.$progress_bar[0].style.width = Math.floor(self.$video[0].currentTime / self.$video[0].duration * 100) + '%';
                 });
 
+                self.$video[0].addEventListener('ended', function (e) {
+                    self.$video.trigger('ended.vp');
+                });
+
                 self.$progress[0].addEventListener('click', function (e) {
-                    var pos = (e.pageX - this.offsetLeft) / this.offsetWidth;
+                    var pos = (e.pageX - this.getBoundingClientRect().x) / this.offsetWidth;
 
                     self.$video[0].currentTime = pos * self.$video[0].duration;
                 });
