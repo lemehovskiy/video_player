@@ -184,6 +184,13 @@ section {
 
 .video-player-demo {
   position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+.video-player-demo video {
+  width: 100%;
+  height: auto;
 }
 
 .video-player-demo[data-is-full-screen=true] video {

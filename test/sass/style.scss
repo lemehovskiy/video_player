@@ -38,6 +38,13 @@ section {
 
 .video-player-demo {
   position: relative;
+  max-width: 600px;
+  margin: auto;
+
+  video {
+    width: 100%;
+    height: auto;
+  }
 
   &[data-is-full-screen=true]{
     video {
