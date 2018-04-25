@@ -21,4 +21,12 @@ $(document).ready(function () {
     console.log('openFullScreen')
   });
 
+  $('.video-player-demo').on('canplay.vp', function () {
+    console.log('canplay')
+  });
+
+  $('.video-player-demo').on('loadstart.vp', function () {
+    console.log('loadstart')
+  });
+
 });

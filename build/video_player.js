@@ -166,6 +166,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           self.$video.trigger('pause.vp');
         });
 
+        self.$video[0].addEventListener('canplay', function (e) {
+          self.$video.trigger('canplay.vp');
+        });
+
+        self.$video[0].addEventListener('loadstart', function (e) {
+          self.$video.trigger('loadstart.vp');
+        });
+
         self.$progress[0].addEventListener('click', function (e) {
           var pos = (e.pageX - this.getBoundingClientRect().x) / this.offsetWidth;
 

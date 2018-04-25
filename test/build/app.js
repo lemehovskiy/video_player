@@ -7087,6 +7087,14 @@ $(document).ready(function () {
   $('.video-player-demo').on('openFullScreen.vp', function () {
     console.log('openFullScreen');
   });
+
+  $('.video-player-demo').on('canplay.vp', function () {
+    console.log('canplay');
+  });
+
+  $('.video-player-demo').on('loadstart.vp', function () {
+    console.log('loadstart');
+  });
 });
 
 /***/ }),
@@ -12210,6 +12218,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           self.$play_pause.addClass('paused');
           self.$play_pause.removeClass('play');
           self.$video.trigger('pause.vp');
+        });
+
+        self.$video[0].addEventListener('canplay', function (e) {
+          self.$video.trigger('canplay.vp');
+        });
+
+        self.$video[0].addEventListener('loadstart', function (e) {
+          self.$video.trigger('loadstart.vp');
         });
 
         self.$progress[0].addEventListener('click', function (e) {
