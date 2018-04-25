@@ -9,6 +9,9 @@ $(document).ready(function () {
 
   $('.video-player-demo').videoPlayer();
 
+  $('.video-player-demo').videoPlayer('play');
+
+
 
   $('.video-player-demo').on('ended.vp', function () {
     console.log('video ended');

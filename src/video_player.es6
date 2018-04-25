@@ -51,11 +51,9 @@
 
       self.$play_pause.on('click', function () {
         if (self.state.is_playing) {
-          self.state.is_playing = false;
           self.pause();
         }
         else {
-          self.state.is_playing = true;
           self.play();
         }
       })
@@ -96,11 +94,15 @@
       });
 
       self.$video[0].addEventListener('canplay', function(e){
-        self.$video.trigger('canplay.vp');
+        self.$element.trigger('canplay.vp');
       })
 
       self.$video[0].addEventListener('loadstart', function(e){
-        self.$video.trigger('loadstart.vp');
+        self.$element.trigger('loadstart.vp');
+      })
+
+      self.$video[0].addEventListener('waiting', function(e){
+        self.$element.trigger('waiting.vp');
       })
 
 
@@ -146,11 +148,13 @@
     play() {
       let self = this;
       self.$video[0].play();
+      self.state.is_playing = true;
     }
 
     pause() {
       let self = this;
       self.$video[0].pause();
+      self.state.is_playing = false;
     }
 
     full_screen() {

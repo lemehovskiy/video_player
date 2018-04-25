@@ -126,10 +126,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
         self.$play_pause.on('click', function () {
           if (self.state.is_playing) {
-            self.state.is_playing = false;
             self.pause();
           } else {
-            self.state.is_playing = true;
             self.play();
           }
         });
@@ -167,11 +165,15 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         });
 
         self.$video[0].addEventListener('canplay', function (e) {
-          self.$video.trigger('canplay.vp');
+          self.$element.trigger('canplay.vp');
         });
 
         self.$video[0].addEventListener('loadstart', function (e) {
-          self.$video.trigger('loadstart.vp');
+          self.$element.trigger('loadstart.vp');
+        });
+
+        self.$video[0].addEventListener('waiting', function (e) {
+          self.$element.trigger('waiting.vp');
         });
 
         self.$progress[0].addEventListener('click', function (e) {
@@ -213,12 +215,14 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       value: function play() {
         var self = this;
         self.$video[0].play();
+        self.state.is_playing = true;
       }
     }, {
       key: 'pause',
       value: function pause() {
         var self = this;
         self.$video[0].pause();
+        self.state.is_playing = false;
       }
     }, {
       key: 'full_screen',
